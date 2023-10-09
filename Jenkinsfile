@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout GIT') {
             steps {
                 echo 'Pulling...'
-                git branch: 'master', url: 'pipeline {
+                git branch: 'master', url: 'pipeline' {
     agent any
     stages {
         stage('Checkout GIT') {
