@@ -10,7 +10,7 @@ pipeline {
         
         stage('Clean and Build') {
             steps {
-                dir('C:\Users\user\Desktop\kaddem') {
+                dir('C:\\Users\\user\\Desktop\\kaddem') {
                     
                     sh 'mvn clean install'
                 }
