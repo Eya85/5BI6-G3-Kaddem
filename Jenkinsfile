@@ -1,14 +1,38 @@
 pipeline {
     agent any
     stages {
-        stage('Récupération du code') {
+        stage('Checkout GIT') {
             steps {
-                git(url: 'https://github.com/votre-utilisateur/votre-projet.git', branch: 'votre-branche')
+                echo 'Pulling...'
+                git branch: 'master', url: 'pipeline {
+    agent any
+    stages {
+        stage('Checkout GIT') {
+            steps {
+                echo 'Pulling...'
+                git branch: 'master', url: 'https://github.com/Syrinebaklouti/kaddem.git'
             }
         }
-        stage('Nettoyage et compilation') {
+        
+        stage('Clean and Build') {
             steps {
-                sh 'mvn clean compile'
+                dir('C:\\Users\\Syrine\\Desktop\\kaddem') {
+                    
+                    sh 'mvn clean install'
+                }
+            }
+        }
+    }
+}'
+            }
+        }
+        
+        stage('Clean and Build') {
+            steps {
+                dir('C:\\Users\\Syrine\\Desktop\\kaddem') {
+                    
+                    sh 'mvn clean install'
+                }
             }
         }
     }
