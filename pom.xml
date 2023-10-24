@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>tn.esprit.spring</groupId>
-    <artifactId>kaddem</artifactId>
+    <artifactId>5BI6-G3-Kaddem</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>kaddem</name>
-    <description>kaddem</description>
+    <name>5BI6-G3-Kaddem</name>
+    <description>5BI6-G3-Kaddem</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
