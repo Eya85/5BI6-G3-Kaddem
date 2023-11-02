@@ -1,6 +1,6 @@
 pipeline {
   agent any
- 
+
   
   stages {
   
@@ -18,7 +18,12 @@ pipeline {
                 sh 'mvn -DskipTests package'
             }
         }
-
+    stage("NEXUS") {
+			steps {
+				sh 'mvn clean deploy -DskipTests'
+				echo "*********NEXUS deployement finished with SUCCESS *********"
+          }
+        }
     
 /*
     stage('Docker build ') {
