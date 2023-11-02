@@ -18,14 +18,7 @@ pipeline {
                 sh 'mvn -DskipTests package'
             }
         }
-    stage("NEXUS") {
-			steps {
-				sh 'mvn clean deploy -DskipTests'
-				echo "*********NEXUS deployement finished with SUCCESS *********"
-          }
-        }
-    
-/*
+
     stage('Docker build ') {
       steps {
          sh 'echo "*********Docker build image is processing ....*********"'
@@ -43,16 +36,16 @@ pipeline {
     stage('Docker push') {
       steps {
          sh 'echo "*********Docker push is processing ....*********"'
-        sh 'docker push ${dockerhubusername}/exam'
+        sh 'docker push ${dockerhubusername}/kaddem'
 
       }
-    }        
+    }/*
     stage('Docker Compose') {
       		steps {
          		sh 'docker-compose up -d'
 			echo "*********Apllication Is Started *********"
       }
-    }
+    }*/
     stage("NEXUS") {
 			steps {
 				sh 'mvn clean deploy -DskipTests'
@@ -67,13 +60,14 @@ pipeline {
               }
             }
     }
+    /*
     stage('Junit/Mockito Testing') {
       steps {
          sh 'echo "*********Junit / Mockito Test is processing .... *********"'
         sh 'mvn  test'
       }
-    }
+    }*/
 
-*/
+
   }
 }
