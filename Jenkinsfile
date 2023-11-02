@@ -22,7 +22,7 @@ pipeline {
     stage('Docker build ') {
       steps {
          sh 'echo "*********Docker build image is processing ....*********"'
-        sh 'docker build -t ${dockerhubusername}/exam .'
+        sh 'docker build -t ${dockerhubusername}/kaddem .'
       }
     }
 
