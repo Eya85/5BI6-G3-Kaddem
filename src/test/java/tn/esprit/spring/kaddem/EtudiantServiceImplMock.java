@@ -53,6 +53,7 @@ public class EtudiantServiceImplMock {
         etudiantList.add(etudiant);
 
 
+
         Mockito.when(etudiantRepository.findAll()).thenReturn(etudiantList);
 
         List<Etudiant> etudiantListResult = etudiantService.retrieveAllEtudiants();
