@@ -11,7 +11,7 @@ services:
     volumes:
       - db:/var/lib/mysql
 
-  gestion-station-ski:
+  KaddemApplication:
     depends_on:
       - mysqldb
     image: eyagoutet/5bi6-g3-kaddem-1.0:latest
