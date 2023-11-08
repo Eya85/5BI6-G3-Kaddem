@@ -18,7 +18,7 @@ pipeline {
                 sh 'mvn -DskipTests package'
             }
         }
-
+/*
     stage('Docker build ') {
       steps {
          sh 'echo "*********Docker build image is processing ....*********"'
@@ -39,7 +39,7 @@ pipeline {
         sh 'docker push ${dockerhubusername}/kaddem'
 
       }
-    }
+    }*/
     stage('Docker Compose') {
       		steps {
          		sh 'docker-compose up -d'
@@ -67,11 +67,6 @@ pipeline {
         sh 'mvn  test'
       }
     }*/
-  stage("RUN APP") {
-  steps {
-    sh 'docker compose up -d'
-  }
-}
 
 
   }
