@@ -3,7 +3,8 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-
+!**/src/test/**/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+!**/src/test/**/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
 ### STS ###
 .apt_generated
 .classpath
