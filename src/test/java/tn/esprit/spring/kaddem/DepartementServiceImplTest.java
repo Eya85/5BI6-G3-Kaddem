@@ -42,7 +42,7 @@ public class DepartementServiceImplTest {
         List<Departement> result = departementService.retrieveAllDepartements();
 
         assertEquals(2, result.size());
-        // You can add more assertions based on your specific use case zeze
+        // You can add more assertions based on your specific use case zezertrtr
     }
 
     @Test
