@@ -18,7 +18,7 @@ pipeline {
                 sh 'mvn -DskipTests package'
             }
         }
-/*
+
     stage('Docker build ') {
       steps {
          sh 'echo "*********Docker build image is processing ....*********"'
@@ -45,7 +45,7 @@ pipeline {
          		sh 'docker-compose up -d'
 			echo "*********Apllication Is Started *********"
       }
-    }*/
+    }
     stage("NEXUS") {
 			steps {
 				sh 'mvn clean deploy -DskipTests'
@@ -67,6 +67,11 @@ pipeline {
         sh 'mvn  test'
       }
     }*/
+  stage("RUN APP") {
+  steps {
+    sh 'docker compose up -d'
+  }
+}
 
 
   }
