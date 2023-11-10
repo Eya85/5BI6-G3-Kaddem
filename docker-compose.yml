@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  mysqldb:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: "0000"
+    ports:
+      - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
+
+  KaddemApplication:
+    depends_on:
+      - mysqldb
+    image: yassinemestiri/5bi6-g3-kaddem-1.0:latest
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: "0000"
+    ports:
+      - 8089:8089
+    stdin_open: true
+    tty: true
+volumes:
+  db:
