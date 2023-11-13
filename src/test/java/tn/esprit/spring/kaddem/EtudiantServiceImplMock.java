@@ -13,8 +13,10 @@ import tn.esprit.spring.kaddem.services.EtudiantServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(MockitoExtension.class)
 public class EtudiantServiceImplMock {
@@ -29,25 +31,39 @@ public class EtudiantServiceImplMock {
     public void testAddEtudiant() {
         // Mock the behavior of the EtudiantRepository for save method
         Etudiant etudiant = new Etudiant();
-        etudiant.setNomE("Jane");
-        etudiant.setPrenomE("Smith");
+        etudiant.setNomE("baklouti");
+        etudiant.setPrenomE("syrine");
 
         Mockito.when(etudiantRepository.save(Mockito.any(Etudiant.class))).thenReturn(etudiant);
 
         Etudiant addedEtudiant = etudiantService.addEtudiant(etudiant);
 
         // Now, you should assert the values of the addedEtudiant object
-        assertEquals("Jane", addedEtudiant.getNomE());
-        assertEquals("Smith", addedEtudiant.getPrenomE());
+        assertEquals("baklouti", addedEtudiant.getNomE());
+        assertEquals("syrine", addedEtudiant.getPrenomE());
     }
+    @Test
+    public void testRetrieveEtudiant() {
+        // Mock the behavior of the EtudiantRepository for findById method
+        Etudiant etudiant = new Etudiant();
+        etudiant.setIdEtudiant(1);
+        etudiant.setNomE("abc");
+        etudiant.setPrenomE("abc");
 
+        Mockito.when(etudiantRepository.findById(1)).thenReturn(Optional.of(etudiant));
+
+        Etudiant retrievedEtudiant = etudiantService.retrieveEtudiant(1);
+
+        assertEquals("abc", retrievedEtudiant.getNomE());
+        assertEquals("abc", retrievedEtudiant.getPrenomE());
+    }
     @Test
     public void testRetrieveAllEtudiants() {
         // Mock the behavior of the EtudiantRepository for findAll method
         Etudiant etudiant = new Etudiant();
         etudiant.setIdEtudiant(1);
-        etudiant.setNomE("John");
-        etudiant.setPrenomE("Doe");
+        etudiant.setNomE("abc");
+        etudiant.setPrenomE("abc");
 
         List<Etudiant> etudiantList = new ArrayList<>();
         etudiantList.add(etudiant);
