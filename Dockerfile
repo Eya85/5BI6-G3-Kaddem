@@ -1,4 +1,4 @@
 FROM openjdk:8-alpine
 EXPOSE 8089
-ADD ./target/devops-1.0.jar test-docker.jar 
-ENTRYPOINT ["java","-jar","/test-docker.jar"]
+ADD ./target/5BI6-G3-Kaddem-1.0.jar 5bi6-g3-kaddem-1.0.jar
+ENTRYPOINT ["java","-jar","/5bi6-g3-kaddem-1.0.jar"]
