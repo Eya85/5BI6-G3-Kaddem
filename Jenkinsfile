@@ -42,7 +42,7 @@ pipeline {
           }
         }
 
-    }
+    
     stage('Docker build ') {
              steps {
          sh 'echo "*********Docker build image is processing ....*********"'
