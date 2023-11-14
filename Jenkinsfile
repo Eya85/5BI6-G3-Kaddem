@@ -60,7 +60,7 @@ pipeline {
 } 
     
 
-
+/*
 
      stage('Docker login') {
       steps {
@@ -75,7 +75,7 @@ pipeline {
         sh 'docker push ${dockerhubusername}/kaddem'
 
       }
-    }
+    }*/
 
     
     
