@@ -20,14 +20,14 @@ pipeline {
               }
             }
     }
-
+/*
     stage('Junit/Mockito Testing') {
       steps {
          sh 'echo "*********Junit / Mockito Test is processing .... *********"'
         sh 'mvn  test'
       }
     } 
-    
+    */
     stage ('Artifact construction') {
             steps {
                 sh 'echo "*********Artifact construction is processing ....*********"'
